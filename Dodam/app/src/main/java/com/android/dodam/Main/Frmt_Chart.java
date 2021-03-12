@@ -2,7 +2,6 @@ package com.android.dodam.Main;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,21 +11,19 @@ import androidx.fragment.app.Fragment;
 
 import com.android.dodam.R;
 
-import java.util.ArrayList;
+public class Frmt_Chart extends Fragment {
 
-public class Frmt_Fav extends Fragment {
-
-    final static String TAG = "Frmt_Fav";
+    final static String TAG = "Frmt_Chart";
     View v;
 
-    public Frmt_Fav() {
+    public Frmt_Chart() {
 
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.frmt_fav,container,false);
+        v = inflater.inflate(R.layout.frmt_chart,container,false);
 
         return v;
     }

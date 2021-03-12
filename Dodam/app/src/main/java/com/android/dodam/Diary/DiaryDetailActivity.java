@@ -1,4 +1,4 @@
-package com.android.dodam.Main;
+package com.android.dodam.Diary;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.android.dodam.R;
 
-public class SettingActivity extends AppCompatActivity {
+public class DiaryDetailActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     ActionBar actionBar;
@@ -17,16 +17,18 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_diary_detail);
 
         //
-        toolbar = findViewById(R.id.settingToolbar);
+        toolbar = findViewById(R.id.diary_DetailToolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);//기본 제목을 없애줍니다.
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
+
+
 
     // 옵션 메뉴
     @Override

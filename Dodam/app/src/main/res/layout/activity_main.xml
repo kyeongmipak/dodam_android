@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Main.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="도담도담">
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +41,7 @@
         android:layout_alignParentBottom="true"
         app:tabIconTint="@color/black"
         app:tabTextColor="@color/black"
-        app:tabSelectedTextColor="@color/white"
+        app:tabSelectedTextColor="@color/purple_700"
         app:tabGravity="fill"
         app:tabIndicatorFullWidth="true"
         app:tabIndicatorGravity="top"

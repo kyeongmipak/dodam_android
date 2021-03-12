@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main.SettingActivity">
+    tools:context=".Diary.DiaryUpdateActivity">
 
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/settingToolbar"
+        android:id="@+id/diary_UpdateToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="20dp"
-            android:text="설정 창">
+            android:text="수정 창">
         </TextView>
 
     </androidx.appcompat.widget.Toolbar>

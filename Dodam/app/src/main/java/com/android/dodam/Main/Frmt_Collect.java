@@ -12,19 +12,19 @@ import androidx.fragment.app.Fragment;
 import com.android.dodam.R;
 
 
-public class Frmt_Category extends Fragment {
+public class Frmt_Collect extends Fragment {
     View v;
-    final static String TAG = "Frmt_Category";
+    final static String TAG = "Frmt_Collect";
 
 
-    public Frmt_Category() {
+    public Frmt_Collect() {
 
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.frmt_category,container,false);
+        v = inflater.inflate(R.layout.frmt_collect,container,false);
 
         return v;
     }
