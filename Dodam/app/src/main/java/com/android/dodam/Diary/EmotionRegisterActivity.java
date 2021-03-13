@@ -20,7 +20,7 @@ public class EmotionRegisterActivity extends AppCompatActivity {
     Toolbar toolbar;
     ActionBar actionBar;
 
-    TextView emotion_tv;
+    TextView emotion_tv, emotion_date_tv;
     ImageButton emotion_sleep, emotion_frown, emotion_pain, emotion_surprised, emotion_angry, emotion_lovely,
             emotion_sad, emotion_shame, emotion_pleasure, emotion_normal, emotion_bored, emotion_unknown;
     Button emotion_btn;
@@ -68,9 +68,10 @@ public class EmotionRegisterActivity extends AppCompatActivity {
         emotion_bored.setOnClickListener(emotionCilckListener);
         emotion_unknown.setOnClickListener(emotionCilckListener);
         // ++++++++++++++++++++++++++++++++++++++++
-
+        emotion_date_tv = findViewById(R.id.emotion_date_tv);
         // 다음으로 넘기기++++++
         emotion_btn = findViewById(R.id.emotion_btn);
+
         emotion_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +79,8 @@ public class EmotionRegisterActivity extends AppCompatActivity {
                     Toast.makeText(EmotionRegisterActivity.this, "감정이 선택되지 않았습니다.", Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent = new Intent(EmotionRegisterActivity.this, DiaryRegisterActivity.class);
-                    intent.putExtra("emotion", emotion_tv.getText());
+                    intent.putExtra("emotion_img", emotion_tv.getText());
+                    intent.putExtra("emotion_date", emotion_date_tv.getText());
                     startActivity(intent);
                 }
             }

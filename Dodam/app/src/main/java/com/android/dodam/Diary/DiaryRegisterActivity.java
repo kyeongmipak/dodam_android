@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,36 +19,53 @@ import com.android.dodam.R;
 
 public class DiaryRegisterActivity extends AppCompatActivity {
 
+    // 액션바
     Toolbar toolbar;
     ActionBar actionBar;
 
-    TextView diary_emotion_tv;
+    TextView diary_emotion_tv, diary_emotion_date;
     ImageView diary_emotion_img;
+
+    EditText diary_register_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary_register);
 
-        //
+        // 액션바 설정 ++++++++++++++++++++++++++++++
         toolbar = findViewById(R.id.diary_RegisterToolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);//기본 제목을 없애줍니다.
         actionBar.setDisplayHomeAsUpEnabled(true);
-        //
+        // +++++++++++++++++++++++++++++++++++++++
 
         diary_emotion_tv = findViewById(R.id.diary_emotion_tv);
+        diary_emotion_date = findViewById(R.id.diary_emotion_date);
 
         Intent intent = getIntent(); // 보내온 Intent를 얻는다
-        diary_emotion_tv.setText(intent.getStringExtra("emotion"));
+        diary_emotion_tv.setText(intent.getStringExtra("emotion_img"));
+        diary_emotion_date.setText(intent.getStringExtra("emotion_date"));
         //
         diary_emotion_img = findViewById(R.id.diary_emotion_img);
 
+
+        // 내가 입력할 제목 및 내용
+        diary_register_title = findViewById(R.id.diary_register_title);
+
+
+
+
+
+        // 내가 선택한 감정 이미지 띄우기
         selectImg();
+
     }
 
+
+    // 내가 선택한 감정 이미지 띄우기
     public void selectImg(){
         switch (diary_emotion_tv.getText().toString()){
             case "졸림":
@@ -86,7 +104,8 @@ public class DiaryRegisterActivity extends AppCompatActivity {
             case "모름":
                 diary_emotion_img.setImageResource(R.drawable.emotion_unknown);
                 break;
-
+            default:
+                break;
         }
     }
 
