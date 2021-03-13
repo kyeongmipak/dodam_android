@@ -7,6 +7,6 @@
     android:gravity="bottom"
     android:layout_gravity="bottom"
     android:background="@drawable/splash"
-    tools:context=".Activity.SplashActivity">
+    tools:context=".Main.SplashActivity">
 
 </LinearLayout>

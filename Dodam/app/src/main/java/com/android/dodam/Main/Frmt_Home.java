@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.android.dodam.Diary.DiaryRegisterActivity;
+import com.android.dodam.Diary.EmotionRegisterActivity;
 import com.android.dodam.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -50,7 +51,7 @@ public class Frmt_Home extends Fragment {
             switch (v.getId()){
                 // 플로팅 버튼 관련 -------------------------
                 case R.id.fabMain:
-                    Intent intentRegister = new Intent(getActivity(), DiaryRegisterActivity.class);
+                    Intent intentRegister = new Intent(getActivity(), EmotionRegisterActivity.class);
                     startActivity(intentRegister);
                     break;
 
