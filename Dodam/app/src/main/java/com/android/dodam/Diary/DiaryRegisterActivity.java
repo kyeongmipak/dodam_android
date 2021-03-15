@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +28,8 @@ public class DiaryRegisterActivity extends AppCompatActivity {
     ImageView diary_emotion_img;
 
     EditText diary_register_title;
+
+    ImageButton diary_register_album, diary_register_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +59,9 @@ public class DiaryRegisterActivity extends AppCompatActivity {
         diary_register_title = findViewById(R.id.diary_register_title);
 
 
-
-
+        // 하단의 앨범과 입력 버튼
+        diary_register_album = findViewById(R.id.diary_register_album);
+        diary_register_btn = findViewById(R.id.diary_register_btn);
 
         // 내가 선택한 감정 이미지 띄우기
         selectImg();

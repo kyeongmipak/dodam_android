@@ -81,7 +81,6 @@
                 android:id="@+id/diary_register_btn"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-
                 android:background="@drawable/ic_check"
                 android:gravity="right|end"
                 android:layout_gravity="right|end"/>

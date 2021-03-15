@@ -57,36 +57,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_weight="1"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
+        android:gravity="center"
         >
         <ImageButton
             android:id="@+id/emotion_sleep"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/emotion_sleep"
             />
         <ImageButton
             android:id="@+id/emotion_frown"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:layout_marginLeft="7dp"
             android:background="@drawable/emotion_frown"
             />
         <ImageButton
             android:id="@+id/emotion_pain"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginLeft="7dp"
             android:background="@drawable/emotion_pain"
             />
@@ -95,36 +91,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_weight="1"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
+        android:gravity="center"
         >
         <ImageButton
             android:id="@+id/emotion_surprised"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/emotion_surprised"
             />
         <ImageButton
             android:id="@+id/emotion_angry"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:layout_marginLeft="7dp"
             android:background="@drawable/emotion_angry"
             />
         <ImageButton
             android:id="@+id/emotion_lovely"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginLeft="7dp"
             android:background="@drawable/emotion_lovely"
             />
@@ -132,36 +125,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_weight="1"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:gravity="center"
         >
         <ImageButton
             android:id="@+id/emotion_sad"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/emotion_sad"
             />
         <ImageButton
             android:id="@+id/emotion_shame"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:layout_marginLeft="7dp"
             android:background="@drawable/emotion_shame"
             />
         <ImageButton
             android:id="@+id/emotion_pleasure"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginLeft="7dp"
             android:background="@drawable/emotion_pleasure"
             />
@@ -169,36 +158,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_weight="1"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:gravity="center"
             >
             <ImageButton
                 android:id="@+id/emotion_normal"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginRight="7dp"
                 android:background="@drawable/emotion_normal"
                 />
             <ImageButton
                 android:id="@+id/emotion_bored"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginRight="7dp"
                 android:layout_marginLeft="7dp"
                 android:background="@drawable/emotion_bored"
                 />
             <ImageButton
                 android:id="@+id/emotion_unknown"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="7dp"
                 android:background="@drawable/emotion_unknown"
                 />
