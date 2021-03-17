@@ -80,7 +80,7 @@ public class EmotionRegisterActivity extends AppCompatActivity {
                 }else {
                     Intent intent = new Intent(EmotionRegisterActivity.this, DiaryRegisterActivity.class);
                     intent.putExtra("emotion_img", emotion_tv.getText());
-                    intent.putExtra("emotion_date", emotion_date_tv.getText());
+                    intent.putExtra("register_date", emotion_date_tv.getText());
                     startActivity(intent);
                 }
             }
