@@ -1,4 +1,4 @@
-package com.android.dodam.SQLite;
+package com.android.dodam.SqLite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
