@@ -48,6 +48,8 @@ public class Frmt_Chart extends Fragment {
     // db형식으로 넣기 위해 선언
     SQLiteDatabase DB;
 
+    private ArrayList<Integer> emotion = null;
+
     HorizontalBarChart horizontalBarChart;
     TextView selectMonth;
     Button selectMonthBtn;
@@ -119,8 +121,12 @@ public class Frmt_Chart extends Fragment {
                 case R.id.selectMonth_chart:
 
                     break;
+
                 case R.id.selectMonthBtn_chart:
+//                    insert();
+                    selectChart((String) selectMonth.getText());
                     chartSetting();
+                    horizontalBarChart.invalidate();
                     break;
             }
         }
@@ -154,8 +160,8 @@ public class Frmt_Chart extends Fragment {
         xl.setPosition(XAxis.XAxisPosition.BOTTOM);
         xl.setDrawAxisLine(true);
         xl.setDrawGridLines(false);
-        CategoryBarChartXaxisFormatter xaxisFormatter = new CategoryBarChartXaxisFormatter(labels);
-        xl.setValueFormatter(xaxisFormatter);
+//        CategoryBarChartXaxisFormatter xaxisFormatter = new CategoryBarChartXaxisFormatter(labels);
+//        xl.setValueFormatter(xaxisFormatter);
         xl.setGranularity(1);
 
         YAxis yl = horizontalBarChart.getAxisLeft();
@@ -170,8 +176,9 @@ public class Frmt_Chart extends Fragment {
         yr.setAxisMinimum(0f);
 
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
-        for (int i = 0; i < 6; i++) {
-            yVals1.add(new BarEntry(i, (i+1)*10));
+        for (int i = 0; i < emotion.size(); i++) {
+//            yVals1.add(new BarEntry(i, (i+1)*10));
+            yVals1.add(new BarEntry(i, emotion.get(i)));
         }
 
         BarDataSet set1;
@@ -180,40 +187,61 @@ public class Frmt_Chart extends Fragment {
         dataSets.add(set1);
         BarData data = new BarData(dataSets);
         data.setValueTextSize(10f);
-        data.setBarWidth(.9f);
+        data.setBarWidth(.4f);
         horizontalBarChart.setData(data);
         horizontalBarChart.getLegend().setEnabled(false);
 
     }
 
-    private void selectChart(){
+    // emotion별 수량 select
+    private void selectChart(String selectMonth){
+        emotion = new ArrayList<Integer>();
+
         try {
             DB = dodamDiary.getReadableDatabase();
-            String query = "SELECT count(diaryEmotion) FROM dodamDiary WHERE diaryDate LIKE '" + selectMonth.getText() + "%' GROUP BY diaryEmotion ORDER BY diaryEmotion;";
+            String query = "SELECT count(diaryEmotion) FROM dodamDiary WHERE diaryDate LIKE '" + selectMonth + "%' GROUP BY diaryEmotion ORDER BY diaryEmotion;";
             // 한 줄 선택되어 있는 data 가져오기
             Cursor cursor = DB.rawQuery(query, null);
-            StringBuffer stringBuffer = new StringBuffer();
-
+//            StringBuffer stringBuffer = new StringBuffer();
+            Log.v(TAG,cursor.getCount() + " rows found");
             while(cursor.moveToNext()){
                 // SELECT 절 처음 순서부터 0,1,2, ...
-                String diaryEmotion = cursor.getString(0);
-
-                stringBuffer.append("diaryEmotion : " + diaryEmotion + "\n");
+                int diaryEmotion = cursor.getInt(0);
+                Log.v(TAG, "emotion"+ diaryEmotion);
+//                stringBuffer.append("diaryEmotion : " + diaryEmotion + "\n");
+                emotion.add(diaryEmotion);
             }
 
-            Log.v(TAG, stringBuffer.toString());
+            Log.v(TAG, "select emotion"+ String.valueOf(emotion.size()));
             cursor.close();
             dodamDiary.close();
             Toast.makeText(getActivity(), "Select OK!", Toast.LENGTH_SHORT).show();
 
-        } catch (Exception e){
+
+
+        } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getActivity(), "Select Error", Toast.LENGTH_SHORT).show();
         }
 
-        return;
-
     }
+
+//    private void insert(){
+//
+//        try {
+//            DB = dodamDiary.getWritableDatabase();
+//            String query = "INSERT INTO dodamDiary (diaryTitle, diaryDate, diaryEmotion) VALUES ('5', '2021-03-28', '12');";
+//            DB.execSQL(query);
+//
+//            dodamDiary.close();
+//            Toast.makeText(getActivity(),"입력 완료!", Toast.LENGTH_SHORT).show();;
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            Toast.makeText(getActivity(),"입력 실패!", Toast.LENGTH_SHORT).show();;
+//        }
+//
+//    }
 
 //    private ArrayList<BarEntry> data() {
 //        ArrayList<BarEntry> data_val = new ArrayList<>();
